@@ -40,7 +40,7 @@ add_action('after_setup_theme', 'paneless_setup');
 
 function paneless_scripts() {
     wp_enqueue_style('paneless-style', get_stylesheet_uri());
-    wp_enqueue_style('paneless-main', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0');
+    wp_enqueue_style('paneless-main', get_template_directory_uri() . '/assets/css/style.css', array('paneless-style'), '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'paneless_scripts');
 
@@ -101,13 +101,13 @@ function paneless_get_user_menu() {
 
         $menu = '<ul class="user-menu">';
         $menu .= '<li class="user-menu-item has-dropdown">';
-        $menu .= '<a href="#" class="user-name">' . get_avatar($current_user->ID, 24) . ' ' . $user_name . '</a>';
-        $menu .= '<ul class="user-dropdown">';
-        $menu .= '<li><a href="' . get_author_posts_url($current_user->ID) . '">Profile</a></li>';
+        $menu .= '<a href="#" class="user-name" aria-expanded="false" aria-haspopup="true">' . get_avatar($current_user->ID, 24) . ' ' . $user_name . '</a>';
+        $menu .= '<ul class="user-dropdown" role="menu">';
+        $menu .= '<li role="presentation"><a href="' . get_author_posts_url($current_user->ID) . '" role="menuitem">Profile</a></li>';
         if (current_user_can('manage_options')) {
-            $menu .= '<li><a href="' . $admin_url . '">Admin</a></li>';
+            $menu .= '<li role="presentation"><a href="' . $admin_url . '" role="menuitem">Admin</a></li>';
         }
-        $menu .= '<li><a href="' . $logout_url . '">Logout</a></li>';
+        $menu .= '<li role="presentation"><a href="' . $logout_url . '" role="menuitem">Logout</a></li>';
         $menu .= '</ul>';
         $menu .= '</li>';
         $menu .= '</ul>';

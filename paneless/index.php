@@ -17,7 +17,9 @@ get_header();
     <div class="container">
         <div class="content-area<?php echo is_active_sidebar('sidebar-1') ? ' has-sidebar' : ''; ?>">
             <div class="primary-content">
-                <?php get_template_part('template-parts/dashboard-cards'); ?>
+                <?php if (is_active_sidebar('integration-area') || is_front_page()): ?>
+                    <?php get_template_part('template-parts/dashboard-cards'); ?>
+                <?php endif; ?>
 
                 <h2 class="section-title"><?php _e('Recent Posts', 'paneless'); ?></h2>
 
