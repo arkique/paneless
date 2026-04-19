@@ -1,0 +1,75 @@
+/**
+ * RTL Stylesheet
+ *
+ * Add support for right-to-left languages
+ */
+
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+.container {
+    direction: rtl;
+}
+
+.header-inner {
+    direction: rtl;
+}
+
+.main-navigation ul {
+    padding-right: 0;
+}
+
+.user-dropdown {
+    right: auto;
+    left: 0;
+}
+
+.content-area {
+    direction: rtl;
+}
+
+@media (max-width: 768px) {
+    .content-area.has-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Posts */
+.posts-list {
+    direction: rtl;
+}
+
+/* Dashboard cards */
+.dashboard-cards {
+    direction: rtl;
+}
+
+/* Sidebar */
+.sidebar {
+    direction: rtl;
+}
+
+/* Footer */
+.footer-inner {
+    direction: rtl;
+}
+
+/* WooCommerce */
+.woocommerce ul.products {
+    direction: rtl;
+}
+
+.woocommerce table.cart th,
+.woocommerce table.cart td {
+    text-align: right;
+}
+
+.woocommerce-MyAccount-navigation ul {
+    padding-right: 0;
+}
+
+.woocommerce form .form-row label {
+    text-align: right;
+}
