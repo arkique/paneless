@@ -9,6 +9,23 @@ function paneless_setup() {
     add_theme_support('custom-logo');
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 
+    add_theme_support('woocommerce', array(
+        'thumbnail_image_width' => 300,
+        'single_image_width' => 600,
+        'product_grid' => array(
+            'default_rows' => 3,
+            'min_rows' => 2,
+            'max_rows' => 8,
+            'default_columns' => 4,
+            'min_columns' => 2,
+            'max_columns' => 5,
+        ),
+    ));
+
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'paneless'),
         'footer' => __('Footer Menu', 'paneless'),
